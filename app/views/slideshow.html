@@ -1,0 +1,10 @@
+<div class="slideshow-container">
+	<div class="slide-container">
+		<img src="{{slide.src}}" style="width:100%;height:100%">
+	</div>
+	<div class="controls">
+		<span class="glyphicon arrow glyphicon-circle-arrow-left" ng-click="move('backward')"></span>
+		<div style="display:inline-block">{{slide.number}} of {{sourceLength}}</div>
+		<span class="glyphicon arrow glyphicon-circle-arrow-right" ng-click="move('forward')"></span>
+	</div>
+</div>
