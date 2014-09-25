@@ -1,4 +1,4 @@
-// Generated on 2014-09-24 using generator-angular 0.9.3
+// Generated on 2014-09-25 using generator-angular 0.9.8
 'use strict';
 
 // # Globbing
@@ -240,8 +240,8 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= yeoman.app %>/images',
-          src: ['{,*/}*.{png,jpg,jpeg,gif}', '!slides/*'],
-          dest: '<%= yeoman.dist %>/images' 
+          src: '{,*/}*.{png,jpg,jpeg,gif}',
+          dest: '<%= yeoman.dist %>/images'
         }]
       }
     },
@@ -275,15 +275,14 @@ module.exports = function (grunt) {
       }
     },
 
-    // ngmin tries to make the code safe for minification automatically by
-    // using the Angular long form for dependency injection. It doesn't work on
-    // things like resolve or inject so those have to be done manually.
-    ngmin: {
+    // ng-annotate tries to make the code safe for minification automatically
+    // by using the Angular long form for dependency injection.
+    ngAnnotate: {
       dist: {
         files: [{
           expand: true,
           cwd: '.tmp/concat/scripts',
-          src: '*.js',
+          src: ['*.js', '!oldieshim.js'],
           dest: '.tmp/concat/scripts'
         }]
       }
@@ -309,7 +308,6 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html',
             'views/{,*/}*.html',
-            'images/slides/*',
             'images/{,*/}*.{webp}',
             'data/*',
             'fonts/*'
@@ -319,16 +317,12 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
-        }, {
-          expand: true,
+        },{
+           expand: true,
           cwd: '.tmp/data',
           dest: '<%= yeoman.dist %>/data',
           src: ['data/*']
-        }, {
-          expand: true,
-          dest: '<%= yeoman.dist %>/images/slides',
-          src: ['slides/*']
-        }, {
+        },{
           expand: true,
           cwd: 'bower_components/bootstrap/dist',
           src: 'fonts/*',
@@ -361,7 +355,8 @@ module.exports = function (grunt) {
     // Test settings
     karma: {
       unit: {
-        configFile: 'test/karma.conf.js'
+        configFile: 'test/karma.conf.js',
+        singleRun: true
       }
     }
   });
@@ -402,7 +397,7 @@ module.exports = function (grunt) {
     'concurrent:dist',
     'autoprefixer',
     'concat',
-    'ngmin',
+    'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',

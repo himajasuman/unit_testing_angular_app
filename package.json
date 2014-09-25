@@ -30,8 +30,12 @@
     "karma": "^0.12.23",
     "karma-jasmine": "^0.1.5",
     "karma-phantomjs-launcher": "^0.1.4",
+    "karma-ng-html2js-preprocessor": "~0.1",
     "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1"
+    "time-grunt": "^0.3.1",
+    "npm": "^2.0.0",
+    "grunt-ng-annotate": "^0.4.0",
+    "install": "^0.1.7"
   },
   "engines": {
     "node": ">=0.10.0"
