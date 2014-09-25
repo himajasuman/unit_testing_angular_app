@@ -26,8 +26,9 @@ module.exports = function(config) {
       'bower_components/angular-route/angular-route.js',
       'bower_components/angular-sanitize/angular-sanitize.js',
       'bower_components/angular-touch/angular-touch.js',
+      'app/views/slideshow.html',
       'app/scripts/**/*.js',
-      'test/mock/**/*.js',
+      // 'test/mock/**/*.js',
       'test/spec/**/*.js'
     ],
 
@@ -35,10 +36,15 @@ module.exports = function(config) {
     exclude: [],
 
     // web server port
-    port: 8080,
+    port: 8180,
 
     preprocessors: {
-      'views/slideshow.html': 'ng-html2js'
+      'app/views/slideshow.html': 'ng-html2js'
+    },
+    
+    ngHtml2JsPreprocessor: {
+      moduleName: 'templates',
+      stripPrefix: 'app/' //add a slash
     },
 
     // Start these browsers, currently available:
@@ -51,6 +57,7 @@ module.exports = function(config) {
     // - IE (only Windows)
     browsers: [
       'PhantomJS'
+      // 'Chrome'
     ],
 
     // Which plugins to enable
@@ -61,7 +68,8 @@ module.exports = function(config) {
 
     // Continuous Integration mode
     // if true, it capture browsers, run tests and exit
-    singleRun: false,
+    // singleRun: false,
+    singleRun: true,
 
     colors: true,
 

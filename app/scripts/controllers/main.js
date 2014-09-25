@@ -8,7 +8,7 @@
  * Controller of the unitTestingApp
  */
 angular.module('unitTestingApp')
-  .controller('MainCtrl', function ($scope,data) {
+  .controller('MainCtrl', function ($scope,dataFactory) {
 
     $scope.options = [{
     	name:'Home',
@@ -33,6 +33,6 @@ angular.module('unitTestingApp')
     	option.status = 'active';
     };
 
-    data.slideShowData();
+    dataFactory.slideShowData();
 
   });

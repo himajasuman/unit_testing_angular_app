@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name unitTestingApp.controller:AboutCtrl
+ * @name unitTestingApp.controller:ContentCtrl
  * @description
- * # AboutCtrl
+ * # ContentCtrl
  * Controller of the unitTestingApp
  */
 angular.module('unitTestingApp')
-  .controller('ContentCtrl', function ($scope, data) {
-  	$scope.slideshowData = data.data();
+  .controller('ContentCtrl', function ($scope, dataFactory) {
+  	$scope.slideshowData = dataFactory.data();
   });

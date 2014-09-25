@@ -15,8 +15,6 @@ angular.module('unitTestingApp')
       	source : '='
       },
       link: function postLink(scope, element, attrs) {
-        // element.text('this is the utSlideshow directive');
-        debugger;
         scope.index = 0;
         scope.slide = scope.source[scope.index];
         scope.sourceLength = scope.source.length;

@@ -4,6 +4,7 @@ describe('Directive: utSlideshow', function () {
 
   // load the directive's module
   beforeEach(module('unitTestingApp'));
+  beforeEach(module('templates'));
 
   var element,
     scope;
@@ -12,9 +13,15 @@ describe('Directive: utSlideshow', function () {
     scope = $rootScope.$new();
   }));
 
-  it('should make hidden element visible', inject(function ($compile) {
+  afterEach(function(){
+    element.remove();
+    element = scope = undefined;
+  });
+
+  it('should create a slideshow', inject(function ($compile) {
     element = angular.element('<ut-slideshow></ut-slideshow>');
     element = $compile(element)(scope);
-    expect(element.text()).toBe('this is the utSlideshow directive');
+    expect(element).not.toBeNull();;
   }));
+  
 });

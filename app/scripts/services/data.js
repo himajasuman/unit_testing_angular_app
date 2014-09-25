@@ -8,7 +8,7 @@
  * Factory in the unitTestingApp.
  */
 angular.module('unitTestingApp')
-  .factory('data', function ($http,$q) {
+  .factory('dataFactory', function ($http,$q) {
     // Service logic
     // ...
     var deferredData,resolvedData;
